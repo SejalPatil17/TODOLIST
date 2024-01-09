@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}Edit Data{% endblock %}
+{% block content %}
+<div class=container.my-3>
+  <h2 class="text-center">Welcome to TODO-Update Your Task Here!</h2>
+  <div class="row justify-content-center">
+  <form  action="{% url 'update' id=id %}" method ="post" >
+    {% csrf_token %}
+  <div class="form-group" >
+      <label for="title">Task Title</label>
+      <input type="text" class="form-control"id="title" name="title" placeholder="title"Required value={{title}}>
+      </div>
+    <div class="form-group" >
+      <label for="desc" >Task Description</label>
+      <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" placeholder="desc" Required>{{desc}}</textarea>
+    </div>
+   
+    </div >
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  </div>
+  <footer>
+    <p class="text-center bg-dark text-light footer">
+    Copyright 2023 | All rights reserved
+  </p></footer>
+{% endblock %}
